@@ -1,0 +1,89 @@
+package lokesh;
+import java.io.*;
+import java.util.*;
+public class coursend {
+
+	public static void main(String[] args) {
+		
+		int ch;
+		 ArrayList<String> colors = new ArrayList<String>();
+	
+	 
+		     
+		        Scanner sc=new Scanner(System.in);
+		        System.out.println("COMPANY LOCKERS APPLICATION");
+		        System.out.println("DEVELOPER DETAILS:");
+		        System.out.println("GANDAM LOKESH\n"+"JAVA WEB DEVELOPER\n");
+		    do
+		        {
+		        System.out.println("1. Display file names in ascending order");
+		        System.out.println("2.Bussiness level operations:");
+		        
+		        System.out.println("3.Exit the application enter 0 to exit\n");
+		        System.out.println("enter your choice");
+		        ch=sc.nextInt();
+		    
+		        switch(ch)
+		        { 
+		        case 1: Collections.sort(colors);
+		        System.out.println("files in ascending order is"+colors);
+		        break;
+		        case 2:System.out.println("\t1.Add a Filename\n\t2.Delete a file\n\t3.Search a file");
+		        int  j;
+		        j=sc.nextInt();
+		        switch(j) {
+		        case 1: colors.add(sc.next());
+		        System.out.println("list after adding is "+colors);
+		        break;
+		       case 2:      String g;
+		        ListIterator<String> listIterator= colors.listIterator();
+		      g=sc.next();
+		        for (String it : colors) {
+		          
+		        	listIterator.next();
+		            if ( it.contains(g))
+		            {
+		                break;
+		        }
+		        }
+		 
+		       
+		        listIterator.remove();
+		        System.out.print("after deletion"+colors);
+		        break;
+		        case 3:System.out.println("enter the file name to be searched");
+		        
+		        String f;
+		        ListIterator<String> lis= colors.listIterator();
+		      f=sc.next();
+		        for (String l : colors) {
+		            
+		    
+		        	lis.next();
+		            if ( l.contains(f))
+		            {
+		                System.out.println("file name found");
+		                break;
+		        }
+		            else {
+		            	System.out.println("file not found");
+		            }
+		        }
+		
+		        break;
+		     default : System.out.println("enter valid choice");
+		       break;
+		    
+		        }
+		        break;
+		        case 3: ch=0;
+		        return ;
+		        default : System.out.println("enter valid option");
+			     break;
+		        }
+		     
+		  
+		    }while(ch!=0);
+	}
+	}
+
